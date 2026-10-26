@@ -1,0 +1,77 @@
+.calendar-grid {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    color: var(--color-fg);
+    user-select: none;
+    row-gap: 16px;
+
+    .control-bar {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+
+        .month-name {
+            flex: 1;
+            text-align: center;
+        }
+
+        > button {
+            width: var(--size-control);
+            height: var(--size-control);
+            min-height: var(--size-control);
+            padding: 0;
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: inherit;
+        }
+    }
+
+    .day-header {
+        height: var(--size-control);
+        padding: 10px 4px;
+        text-align: center;
+    }
+
+    .date-cell {
+        position: relative;
+        cursor: pointer;
+        height: var(--size-control);
+        width: var(--size-control);
+        justify-self: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.off-current-month {
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            position: absolute;
+
+            border: 2px solid var(--color-fg);
+            transition: opacity 0.2s, border 0.2s;
+            opacity: 0;
+        }
+
+        &:hover::before {
+            opacity: 0.3;
+        }
+        &.selected::before {
+            opacity: 1;
+        }
+
+        &.selected:hover::before {
+            border: 2px solid var(--color-error);
+        }
+    }
+}

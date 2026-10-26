@@ -1,0 +1,40 @@
+{
+    "_publicImportMap": "./importmap.json",
+    "importMap": "./importmap.json",
+    "tasks": {
+        "dev": "deno run -A tools/dev.ts",
+        "reset-config": "deno run --no-config --allow-read=deno.json --allow-write=deno.json tools/reset-config.ts",
+        "test": "deno test --no-config --no-check common backend/security",
+        "lint": "deno lint --config=deno.tools.json backend common frontend tools",
+        "fmt": "deno fmt --config=deno.tools.json backend common frontend tools deno.json deno.tools.json importmap.json",
+        "fmt:check": "deno fmt --config=deno.tools.json --check backend common frontend tools deno.json deno.tools.json importmap.json"
+    },
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "jusix",
+        "lib": [
+            "deno.window",
+            "dom"
+        ]
+    },
+    "lint": {
+        "exclude": [
+            "common/lib/",
+            "common/surveys/schedule-poll/static/emoji-picker-element-1-29-1.js"
+        ],
+        "rules": {
+            "exclude": [
+                "jsx-key",
+                "no-window"
+            ]
+        }
+    },
+    "fmt": {
+        "exclude": [
+            "common/lib/",
+            "common/surveys/schedule-poll/static/emoji-picker-element-1-29-1.js"
+        ],
+        "indentWidth": 4,
+        "lineWidth": 120
+    }
+}

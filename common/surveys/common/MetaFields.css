@@ -1,0 +1,12 @@
+.meta {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    gap: 4px;
+    display: flex;
+    color: var(--color-fg);
+    flex-direction: column;
+}

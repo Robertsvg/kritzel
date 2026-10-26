@@ -1,0 +1,14 @@
+{
+    "importMap": "./importmap.json",
+    "lint": {
+        "exclude": ["common/lib/", "common/surveys/schedule-poll/static/emoji-picker-element-1-29-1.js"],
+        "rules": {
+            "exclude": ["jsx-key", "no-window", "require-await"]
+        }
+    },
+    "fmt": {
+        "exclude": ["common/lib/", "common/surveys/schedule-poll/static/emoji-picker-element-1-29-1.js"],
+        "indentWidth": 4,
+        "lineWidth": 120
+    }
+}

@@ -1,0 +1,63 @@
+:host {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+}
+
+main {
+    gap: 48px;
+    display: flex;
+    padding-top: 96px;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    color: var(--color-fg);
+    background-color: transparent;
+
+    h2 {
+        color: inherit !important;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    section {
+        gap: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .survey-type {
+        width: 200px;
+        min-height: 168px;
+        gap: 16px;
+        display: flex;
+        padding: 32px 40px;
+        align-items: center;
+        flex-direction: column;
+
+        font-size: 1.1em;
+        color: inherit !important;
+        border-radius: 16px;
+        border: 2px solid var(--color-border);
+        background-color: var(--color-input-bg);
+
+        cursor: pointer;
+        transition: background-color 0.3s var(--easing-default), border-color 0.3s var(--easing-default);
+
+        &:hover {
+            border-color: var(--color-fg);
+            background-color: var(--color-button-hover);
+        }
+
+        img {
+            width: 48px;
+            height: 48px;
+            filter: var(--filter-survey-icon);
+        }
+    }
+}

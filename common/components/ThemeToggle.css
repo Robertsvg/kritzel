@@ -1,0 +1,36 @@
+:host {
+    top: 16px;
+    right: 16px;
+    z-index: 20;
+    position: fixed;
+}
+
+.theme-toggle {
+    gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 168px;
+    height: var(--size-control);
+    padding: 0 14px;
+    border-radius: 999px;
+    color: var(--color-fg);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-panel-bg);
+    box-shadow: 0 8px 24px var(--color-shadow);
+    white-space: nowrap;
+}
+
+.theme-toggle:hover:not(:disabled) {
+    background-color: var(--color-button-hover);
+}
+
+.theme-toggle__icon {
+    line-height: 1;
+}
+
+.theme-toggle__label {
+    font-size: 0.9em;
+    font-weight: 600;
+}

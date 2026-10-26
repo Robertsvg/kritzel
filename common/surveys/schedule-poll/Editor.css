@@ -1,0 +1,104 @@
+main {
+    width: 100%;
+    max-height: 100%;
+    color: var(--color-fg);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+label {
+    color: inherit;
+}
+
+.recurrence-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    select {
+        width: 136px;
+    }
+
+    select:disabled {
+        opacity: 0.65;
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.9em;
+        opacity: 0.75;
+    }
+
+    .recurrence-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+
+        a {
+            flex-shrink: 0;
+            font-size: 0.9em;
+        }
+    }
+}
+
+.recurrence-toggle {
+    font-weight: 600;
+}
+
+.schedule-setup {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    min-height: 0;
+    gap: 12px;
+
+    .calendar {
+        width: 420px;
+        flex: 0 0 420px;
+        align-self: start;
+    }
+
+    .slots {
+        flex-grow: 1;
+        min-height: 200px;
+
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        gap: 16px;
+
+        .no-dates {
+            align-self: center;
+            margin-bottom: auto;
+            margin-top: auto;
+
+            color: var(--color-muted);
+            font-size: 0.9em;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .schedule-setup {
+        flex-direction: column;
+
+        .calendar {
+            width: 100%;
+            flex-basis: auto;
+        }
+    }
+}
